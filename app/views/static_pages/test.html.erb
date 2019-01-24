@@ -1,0 +1,16 @@
+<h1>Display Flickr User Photos</h1>
+
+<div>
+	<%= form_tag(static_pages_test_path, method: "get") do%>
+		<%= label_tag(:user_id) %>
+		<%= text_field_tag(:user_id) %>
+
+		<%= submit_tag("Search") %>
+	<% end %>
+</div>
+
+<% if @photos != nil %>
+	<% @photos.each do |photo| %>
+		<img src= <%= photo %> height=200px >
+	<% end %>
+<% end %>
